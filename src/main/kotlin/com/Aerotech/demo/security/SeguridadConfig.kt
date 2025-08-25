@@ -18,6 +18,7 @@ class SeguridadConfig {
             .authorizeHttpRequests { authz ->
                 authz
                     .requestMatchers("/autenticacion/registrar", "/autenticacion/iniciar-sesion").permitAll()
+                    .requestMatchers("/autenticacion/registrar", "/autenticacion/obtener-token").permitAll()
                     .requestMatchers("/admin/**").hasRole("ADMINISTRADOR")
                     .requestMatchers("/empleado/**").hasRole("EMPLEADO")
                     .requestMatchers("/cliente/**").hasRole("CLIENTE")
